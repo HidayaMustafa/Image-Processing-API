@@ -7,22 +7,20 @@ const imageProcessor = async (
     width: number,
     height: number
 ): Promise<string> => {
-    // Build the path of the original image
-    const fullImagePath = path.resolve(
-        __dirname,
-        '../../../assets/full',
-        `${filename}.jpg`
-    );
+    // Resolve paths from the project root
+    const projectRoot = process.cwd();
+    const fullDir = path.join(projectRoot, 'assets', 'full');
+    const thumbDir = path.join(projectRoot, 'assets', 'thumb');
 
-    // Build a unique filename for the resized image
+    // Build the original image path
+    const fullImagePath = path.join(fullDir, `${filename}.jpg`);
+
+    // Build a unique cached filename
     const resizedImageName = `${filename}_${width}_${height}.jpg`;
+    const thumbImagePath = path.join(thumbDir, resizedImageName);
 
-    // Build the path of the cached resized image
-    const thumbImagePath = path.resolve(
-        __dirname,
-        '../../../assets/thumb',
-        resizedImageName
-    );
+    // Make sure the cache directory exists
+    await fs.promises.mkdir(thumbDir, { recursive: true });
 
     // Check if the original image exists
     if (!fs.existsSync(fullImagePath)) {
@@ -34,7 +32,7 @@ const imageProcessor = async (
         return thumbImagePath;
     }
 
-    // Resize the image and save it to the thumb folder
+    // Resize the image and save it in the cache folder
     await sharp(fullImagePath).resize(width, height).toFile(thumbImagePath);
 
     return thumbImagePath;

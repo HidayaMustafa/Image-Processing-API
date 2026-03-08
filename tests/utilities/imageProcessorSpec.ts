@@ -1,4 +1,5 @@
 import fs from 'fs';
+import path from 'path';
 import imageProcessor from '../../src/utilities/imageProcessor';
 
 describe('imageProcessor utility', (): void => {
@@ -6,6 +7,18 @@ describe('imageProcessor utility', (): void => {
         const outputPath = await imageProcessor('fjord', 200, 200);
 
         expect(fs.existsSync(outputPath)).toBeTrue();
+    });
+
+    it('should create the thumb directory if it does not exist', async (): Promise<void> => {
+        const thumbDir = path.join(process.cwd(), 'assets', 'thumb');
+
+        if (fs.existsSync(thumbDir)) {
+            fs.rmSync(thumbDir, { recursive: true, force: true });
+        }
+
+        await imageProcessor('fjord', 220, 220);
+
+        expect(fs.existsSync(thumbDir)).toBeTrue();
     });
 
     it('should throw an error if the original image does not exist', async (): Promise<void> => {
