@@ -49,7 +49,7 @@ image-processing-api/
 └── README.md
 
 ```
-
+---
 ## Installation
 
 Clone the repository and install dependencies:
