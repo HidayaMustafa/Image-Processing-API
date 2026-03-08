@@ -1,36 +1,37 @@
 {
-  "name": "image-processing-api",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  
-  "scripts": {
-    "start": "node build/src/server.js",
-    "build": "tsc",
-    "test": "npm run build && jasmine",
-    "lint": "eslint . --ext .ts",
-    "format": "prettier --write ."
-  },
-  
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "express": "^5.2.1",
-    "sharp": "^0.34.5"
-  },
-  "devDependencies": {
-    "@types/express": "^5.0.6",
-    "@types/jasmine": "^6.0.0",
-    "@types/node": "^25.3.5",
-    "@types/supertest": "^7.2.0",
-    "eslint": "^10.0.3",
-    "jasmine": "^6.1.0",
-    "nodemon": "^3.1.14",
-    "prettier": "^3.8.1",
-    "supertest": "^7.2.2",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
-  }
+    "name": "image-processing-api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node build/src/server.js",
+        "build": "tsc",
+        "test": "npm run build && jasmine",
+        "lint": "eslint .",
+        "format": "prettier --write ."
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "dependencies": {
+        "express": "^5.2.1",
+        "sharp": "^0.34.5"
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@types/express": "^5.0.6",
+        "@types/jasmine": "^6.0.0",
+        "@types/node": "^25.3.5",
+        "@types/supertest": "^7.2.0",
+        "@typescript-eslint/eslint-plugin": "^8.56.1",
+        "@typescript-eslint/parser": "^8.56.1",
+        "eslint": "^10.0.3",
+        "jasmine": "^6.1.0",
+        "nodemon": "^3.1.14",
+        "prettier": "^3.8.1",
+        "supertest": "^7.2.2",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.9.3"
+    }
 }

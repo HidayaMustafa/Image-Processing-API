@@ -1,18 +1,15 @@
 {
-  "compilerOptions": {
-    "target": "ES2020",
-    "module": "commonjs",
-    // Set the root directory of the project (src and tests)
-    "rootDir": ".",
-    // Output compiled JavaScript files into the build folder
-    "outDir": "./build",
-    "strict": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
-  },
-  "include": [
-    "src",
-    "tests"
-  ]
+    "compilerOptions": {
+        "target": "ES2020",
+        "module": "commonjs",
+        // Set the root directory of the project (src and tests)
+        "rootDir": ".",
+        // Output compiled JavaScript files into the build folder
+        "outDir": "./build",
+        "strict": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true
+    },
+    "include": ["src", "tests"]
 }
