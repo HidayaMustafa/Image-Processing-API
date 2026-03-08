@@ -48,6 +48,7 @@ image-processing-api/
 ├── tsconfig.json
 └── README.md
 
+```
 
 ## Installation
 
