@@ -19,36 +19,35 @@ This API resizes images based on query parameters and caches the resized version
 
 ## Project Structure
 
-image-processing-api
+```text
+image-processing-api/
+├── assets/
+│   ├── full/                 # Original images
+│   └── thumb/                # Cached resized images
 │
-├── assets
-│ ├── full # Original images
-│ └── thumb # Cached resized images
+├── src/
+│   ├── routes/
+│   │   └── api/
+│   │       └── images.ts     # API route
+│   │
+│   ├── utilities/
+│   │   └── imageProcessor.ts # Image processing logic
+│   │
+│   ├── app.ts                # Express application
+│   └── server.ts             # Server entry point
 │
-├── src
-│ ├── routes
-│ │ └── api
-│ │ └── images.ts # API route
-│ │
-│ ├── utilities
-│ │ └── imageProcessor.ts # Image processing logic
-│ │
-│ ├── app.ts # Express application
-│ └── server.ts # Server entry point
+├── tests/
+│   ├── endpoints/
+│   │   └── imagesSpec.ts
+│   │
+│   └── utilities/
+│       └── imageProcessorSpec.ts
 │
-├── tests
-│ ├── endpoints
-│ │ └── imagesSpec.ts
-│ │
-│ └── utilities
-│ └── imageProcessorSpec.ts
-│
-├── build # Compiled JavaScript output
+├── build/                    # Compiled JavaScript output
 ├── package.json
 ├── tsconfig.json
 └── README.md
 
----
 
 ## Installation
 
