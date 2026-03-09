@@ -8,14 +8,14 @@ This API resizes images based on query parameters and caches the processed versi
 
 ## Features
 
-* Resize images using query parameters
-* Cache resized images in the `assets/thumb` folder
-* Serve cached images for repeated requests
-* Handle invalid input with clear error messages
-* Unit and endpoint testing using **Jasmine** and **SuperTest**
-* Code formatting using **Prettier**
-* Code linting using **ESLint**
-* Clean project structure with separation between routes, utilities, source code, compiled code, and tests
+- Resize images using query parameters
+- Cache resized images in the `assets/thumb` folder
+- Serve cached images for repeated requests
+- Handle invalid input with clear error messages
+- Unit and endpoint testing using **Jasmine** and **SuperTest**
+- Code formatting using **Prettier**
+- Code linting using **ESLint**
+- Clean project structure with separation between routes, utilities, source code, compiled code, and tests
 
 ---
 
@@ -143,27 +143,25 @@ http://localhost:3000/api/images?filename=fjord&width=200&height=200
 
 ### Expected Behavior
 
-* The API looks for the original image in:
+- The API looks for the original image in:
 
 ```
 assets/full/fjord.jpg
 ```
 
-* If the resized image does **not** already exist, the API:
-
-  * resizes the image to the requested dimensions
-  * saves the result inside the cache folder:
+- If the resized image does **not** already exist, the API:
+    - resizes the image to the requested dimensions
+    - saves the result inside the cache folder:
 
 ```
 assets/thumb/fjord_200_200.jpg
 ```
 
-* If the resized image **already exists**, the API:
+- If the resized image **already exists**, the API:
+    - returns the cached image directly
+    - does not process the image again
 
-  * returns the cached image directly
-  * does not process the image again
-
-* The response is the **resized JPG image itself**, not JSON or plain text.
+- The response is the **resized JPG image itself**, not JSON or plain text.
 
 ---
 
@@ -211,11 +209,11 @@ The API returns appropriate HTTP status codes and messages for invalid cases.
 
 Returned when:
 
-* `filename` is missing
-* `width` is missing
-* `height` is missing
-* `width` is not a valid positive number
-* `height` is not a valid positive number
+- `filename` is missing
+- `width` is missing
+- `height` is missing
+- `width` is not a valid positive number
+- `height` is not a valid positive number
 
 ---
 
@@ -223,7 +221,7 @@ Returned when:
 
 Returned when:
 
-* the requested image does not exist in `assets/full`
+- the requested image does not exist in `assets/full`
 
 ---
 
@@ -231,7 +229,7 @@ Returned when:
 
 Returned when:
 
-* an unexpected error occurs during image processing
+- an unexpected error occurs during image processing
 
 ---
 
@@ -277,10 +275,10 @@ tests/endpoints/imagesSpec.ts
 
 These tests verify:
 
-* valid image requests
-* missing parameters
-* invalid dimensions
-* image not found cases
+- valid image requests
+- missing parameters
+- invalid dimensions
+- image not found cases
 
 ---
 
@@ -294,30 +292,30 @@ tests/utilities/imageProcessorSpec.ts
 
 These tests verify:
 
-* image resizing works correctly
-* cached files are created
-* missing source image errors are handled correctly
+- image resizing works correctly
+- cached files are created
+- missing source image errors are handled correctly
 
 ---
 
 ## Technologies Used
 
-* Node.js
-* Express
-* TypeScript
-* Sharp
-* Jasmine
-* SuperTest
-* ESLint
-* Prettier
+- Node.js
+- Express
+- TypeScript
+- Sharp
+- Jasmine
+- SuperTest
+- ESLint
+- Prettier
 
 ---
 
 ## Notes
 
-* Original images should be placed inside `assets/full`
-* Cached resized images are stored inside `assets/thumb`
-* The cache directory should be available at runtime or created automatically before writing resized files
+- Original images should be placed inside `assets/full`
+- Cached resized images are stored inside `assets/thumb`
+- The cache directory should be available at runtime or created automatically before writing resized files
 
 ---
 
